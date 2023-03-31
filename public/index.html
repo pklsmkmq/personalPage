@@ -16,7 +16,7 @@
 </head>
 
 <body class="font-quicksand">
-    <header>
+    <header class="fixed top-0 z-2" id="header">
         <div class="w-screen px-10 md:px-32">
             <div class="h-20 w-full flex justify-between items-center">
                 <h1 class="text-3xl font-bold">Nurdiansyah S.Kom</h1>
@@ -53,8 +53,39 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section id="slider">
+            <div class="w-screen h-[600px] mt-32 px-10 md:px-32 flex justify-between gap-2 flex-col md:flex-row">
+                <div class="w-full md:w-3/5 h-[600px] order-2 md:order-1">
+                    <p class="text-2xl text-gray-400 font-semibold">Profesional</p>
+                    <h2 class="text-3xl md:text-7xl font-bold my-3">Flutter Developer and UI/UX Designer</h2>
+                    <p class="text-lg w-full md:w-[73%]">My main goal is travelling the whole world while working
+                        remotely! If you’d like to help/work with me, Let’s get in touch!</p>
+                    <button
+                        class="py-3 px-8 bg-orange-600 text-white hover:bg-white hover:text-black hover:ring hover:ring-orange-600 transition duration-300 mt-3 rounded-lg">Say
+                        Hello</button>
+                </div>
+                <div class="w-full md:w-2/5 h-[600px] order-1 md:order-2">
+                    <img src="../assets/img/gambar.png" alt="gambar">
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script>
+        window.onscroll = function () { menu() };
         var xstatus = false;
+
+        function menu() {
+            if (document.documentElement.scrollTop > 20) {
+                document.getElementById("header").classList.add("bg-white");
+                document.getElementById("header").classList.add("shadow-lg");
+            } else {
+                document.getElementById("header").classList.remove("bg-white");
+                document.getElementById("header").classList.remove("shadow-lg");
+            }
+        }
 
         function showHideMenu() {
             var menu = document.getElementById("daftarMenu");
